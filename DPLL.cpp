@@ -316,7 +316,7 @@ int FindEmptyClause()//查找CNF中是否存在空子句
     return FALSE;
 }
 
-void RestoreCNF()
+void RestoreCNF()       //撤销当前决策层对CNF的修改实现回溯
 {
     extern ClauseNode *CNFhead;
     extern VariableInfo *varInfo;
@@ -393,7 +393,7 @@ int ChooseMax()//统计并返回出现频率最高的变量
     return max;
 }
 
-int GetNearest()
+int GetNearest()//选择第一个子句的第一个变量
 {
     extern ClauseNode *CNFhead;
     extern VariableInfo *varInfo;
@@ -528,7 +528,7 @@ int DPLL()//递归的DPLL算法
 
 
 
-int NonRecursiveDPLL()
+int NonRecursiveDPLL()//非递归DPLL算法
 {
     extern ClauseNode *CNFhead;
     extern VariableInfo *varInfo;
